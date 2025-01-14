@@ -1,0 +1,204 @@
+:root {
+  --line-height: 1.5rem;
+  --color-primary: #d6001c;
+  --text-color-secondary: #2a2e3a;
+  --color-secondary: #6e1578;
+  --bg-color-primary: #fff;
+  --bg-color-secondary: #f5f6f8;
+  --content-spacing: 1rem 20rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mulish', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: var(--line-height);
+  background-color: var(--bg-color-primary);
+}
+
+.header {
+  padding: var(--content-spacing);
+  z-index: 2;
+  display: flex;
+  position: relative;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.header-menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 3rem;
+  margin-right: 2rem;
+  .icon {
+    font-size: 0.875rem;
+    flex: 1;
+    text-align: end;
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+.header-menu > p {
+  color: var(--text-color-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header-menu > p:hover {
+  color: var(--color-primary);
+}
+
+.content {
+  background-color: var(--bg-color-secondary);
+  padding: var(--content-spacing);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'side-menu main';
+  column-gap: 1.25rem;
+}
+
+.side-menu {
+  grid-area: side-menu;
+}
+
+.side-menu-content {
+  position: sticky;
+  top: 10rem;
+}
+.main {
+  grid-area: main;
+}
+
+.button {
+  border-radius: 0.25rem;
+  color: var(--color-primary);
+  background-color: var(--bg-color-primary);
+  font-family: inherit;
+  font-weight: 600;
+  border: 1px solid var(--color-primary);
+  padding: 9px 32px;
+}
+
+.button:hover {
+  background-color: var(--color-primary);
+  color: var(--bg-color-primary);
+  cursor: pointer;
+}
+
+.title {
+  height: 280px;
+  padding: 1rem 0 1rem 20rem;
+  background-color: var(--bg-color-secondary);
+}
+h1 {
+  margin-top: 4rem;
+  margin-bottom: 0;
+  font-size: 3rem;
+  line-height: normal;
+  width: fit-content;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle-content {
+  display: flex;
+  gap: 0.5rem;
+}
+.subtitle {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.articles {
+  padding: var(--content-spacing);
+  background-color: var(--bg-color-secondary);
+}
+
+.card {
+  padding: 0;
+  display: inline-block;
+  min-height: 400px;
+  background-color: var(--bg-color-primary);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 380px;
+}
+
+.line-spacer {
+  width: 0.124rem;
+  height: 1rem;
+  background-color: var(--bg-color-secondary);
+}
+
+.content-footer {
+  background-color: var(--text-color-secondary);
+  color: var(--bg-color-primary);
+  padding: var(--content-spacing);
+}
+
+.footer-logo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  h6 {
+    font-size: 1.15rem;
+    margin: auto;
+    font-weight: 500;
+  }
+
+  ul {
+    padding: 0;
+    font-size: 0.875rem;
+  }
+}
+
+.click {
+  list-style-type: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1.5rem;
+
+  i {
+    width: 1.25rem;
+  }
+}
+.click:hover {
+  color: #cccccc;
+}
+/* 1024--->hide menu items & no padding
+     768--->side menu urca sus & footer pe doua randuri
+*/

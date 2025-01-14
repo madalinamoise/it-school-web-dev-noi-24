@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+
+.box1 {
+  background-color: #9b0840;
+  height: 100vh;
+}
+
+.box2 {
+  height: 100vh;
+  background-color: #ddf2d1;
+}
+
+.box3 {
+  height: 50%;
+  background-color: #d5d6d0;
+}

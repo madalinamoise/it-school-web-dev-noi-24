@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+}
+/* .box1, .box2, .box3{} */
+
+.box1 {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+  position: relative;
+}
+
+.box2 {
+  width: 200px;
+  height: 100px;
+  background-color: blueviolet;
+  position: relative;
+  top: -150px;
+  left: 150px;
+}
+
+.box3 {
+  width: 100px;
+  height: 50px;
+  background-color: grey;
+  position: absolute;
+  top: 0;
+}
+
+.box4 {
+  width: 250px;
+  height: 300px;
+  background-color: indianred;
+  position: absolute;
+  top: 130px;
+}
+
+.button {
+  padding: 20px;
+  background-color: aqua;
+  border-radius: 20px;
+  position: absolute;
+  right: 0px;
+  bottom: 30px;
+}

@@ -1,0 +1,10 @@
+body {
+  background-color: var(--bs-body-bg);
+}
+
+.h1 {
+  font-size: 10px;
+}
+.blockquote-footer {
+  color: red;
+}

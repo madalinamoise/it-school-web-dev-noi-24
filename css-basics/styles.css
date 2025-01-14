@@ -1,0 +1,80 @@
+* {
+  color: #40e0d0;
+  font-family: 'Montserrat', serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+#title {
+  color: rgb(255, 0, 0);
+}
+
+h1 {
+  color: rgba(0, 0, 255, 0.5);
+}
+
+.title {
+  color: rgb(255, 192, 203);
+}
+
+/* tag specificity --> (0,0,0,1)
+   class/attribute specificity --> (0,0,1,0)
+   id specificity --> (0,1,0,0)
+   inline specificity --> (1,0,0,0)
+   * specificity --> (0,0,0,0)
+*/
+
+p.container-title {
+  font-size: 20px;
+}
+
+.container p {
+  font-size: 16px;
+}
+
+#section1 .container .container-title {
+  font-size: 24px;
+}
+
+[data-role='title3'] {
+  font-size: 30px;
+}
+
+/* descendent selector -> does not keep count on hierarchy */
+ul li {
+  color: green;
+}
+
+/* direct child selector */
+ul > li.item2 {
+  color: orange;
+}
+
+li > p.subtitle {
+  color: rgb(128, 0, 128, 0.5);
+}
+
+.font-container > p {
+  color: #9b0840;
+  font-size: 1rem;
+}
+
+.font-container-2 {
+  font-size: 25px;
+
+  > p {
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  div {
+    background-color: #222;
+    color: #fff;
+  }
+}
