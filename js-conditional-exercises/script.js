@@ -155,3 +155,8 @@ console.log(textReversed);
 /**
  * TEMA: Aflati daca un cuvant este palindrom. ex: "madam"->"madam" la fel si scris de la coada la cap
  */
+
+/**
+ * git fetch --> sa va aduceti toate branch-urile
+ * sa accesati js-conditional-exercises branch
+ */
