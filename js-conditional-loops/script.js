@@ -32,3 +32,17 @@ for (let i = 0; i < 3; i++) {
 for (let index = 0; index < fruits.length; index++) {
   console.log(fruits[index]);
 }
+
+let str = 'madam';
+function isPalindrome(str) {
+  let reversedStr = str; 
+  if (str === reversedStr) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isPalindrome(str));
+
+let str1 = 'anabella';
+console.log(isPalindrome(str1));
