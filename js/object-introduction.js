@@ -101,8 +101,3 @@ console.log(Math.random());
 //Date
 let now = new Date();
 console.log(now);
-
-let a = '';
-if (a) {
-  console.log('Ss');
-}
