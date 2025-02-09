@@ -1,0 +1,22 @@
+.desired-text {
+    margin-top: 50px;
+    width: 250px;
+ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    input {
+        height: 30px;
+        width: 170px;
+    }
+
+    buton {
+        height: 30px;
+    }
+
+
+}
+
+

@@ -45,3 +45,11 @@ document.getElementById('newBtn').addEventListener('click', () => {
 });
 
 //Homework :Click a button to display the text entered in an input field.(aveti un input, introduceti text in el, apasati button, textul sa apara in html)
+const editable = document.querySelector("input");
+const result = document.querySelector(".result");
+const initial = result.getHTML();
+
+
+document.querySelector(".submit").addEventListener("click", () => {
+  result.textContent = initial.concat(editable.value);
+});
