@@ -58,3 +58,24 @@ for (let i = 1; i <= 5; i++) {
     console.log(i);
   }, i * 1000);
 }
+
+//EX 5
+
+let count =0;
+
+function delayedCounter(){
+  console.log("I am in delayed");
+  
+  if(count<5){
+    setTimeout(function exe(){
+      count++;
+      console.log(`Count: ${count}`);
+      delayedCounter();
+      
+      console.log("Leave exe")
+    },1000)
+  }
+  
+}
+
+delayedCounter();
