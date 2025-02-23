@@ -3,21 +3,22 @@
 	margin: 0;
 }
 
+h2 {
+	text-align: center;
+	margin-top: 30px;
+}
+
 .content {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	/* column-gap: 50px;
-	row-gap: 30px; */
-	margin: 100px;
+	margin: 50px;
 	justify-content: space-around;
 }
 
 button {
 	padding: 10px;
 	cursor: pointer;
-	height: 50px;
-	margin-top: 30px;
 	background-color: #fff;
 	border: solid 1px black;
 	border-radius: 4px;
@@ -38,7 +39,7 @@ button:focus:active {
 	justify-content: center;
 	width: 500px;
 	height: 300px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	background-color: transparent;
 	border-radius: 10px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -49,7 +50,7 @@ button:focus:active {
 .bank-name p,
 .account-number p,
 .iban p {
-	margin-top: 30px;
+	margin-top: 20px;
 	font-style: italic;
 	font-size: large;
 	color: rgba(0, 0, 0, 0.4);

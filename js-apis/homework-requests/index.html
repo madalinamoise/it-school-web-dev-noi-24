@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework multiple HHTP requests</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./app.js"></script>
+</head>
+
+<body>
+  <h1 class="title">ReqRes</h1>
+  <div class="main">
+    <h3>GET HTTP Requests</h3>
+    <div class="show">
+      <div class="user">
+        <button onclick="singleUserData('email', showSingleUser)">Show Single User</button>
+      </div>
+      <div class="users">
+        <button onclick="multipleUsersData('email', showMultipleUsers)">Show Multiple Users</button>
+      </div>
+    </div>
+    <div class="created-user">
+      <h3>POST HTTP Requests</h3>
+      <button onclick="showCreatedUser(newlyCreatedUser)">Show new added user</button>
+    </div>
+    <div class="updated-user">
+      <h3>PATCH HTTP Requests</h3>
+      <button onclick="showUpdateddUser(updatedUser)">Show new updated user</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
