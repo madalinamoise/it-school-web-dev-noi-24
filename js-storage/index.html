@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script2.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>JS Storage Shopping Cart</title>
+  </head>
+  <body>
+    <h2>Select currency</h2>
+    <select id="currency" onchange="updateCurrency()">
+      <option value="USD">USD</option>
+      <option value="RON">RON</option>
+    </select>
+
+    <h2>Products</h2>
+
+    <div class="product">
+      <span>Product 1 - 30$</span>
+      <button onclick="addToCart('Product 1',30)">Add to cart</button>
+    </div>
+
+    <div class="product">
+      <span>Product 2 - 10$</span>
+      <button onclick="addToCart('Product 2',10)">Add to cart</button>
+    </div>
+
+    <h2>Shopping Cart</h2>
+    <div class="cart">
+      <ul id="cart-items"></ul>
+    </div>
+  </body>
+</html>
