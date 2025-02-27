@@ -1,0 +1,54 @@
+:root {
+  --color-primary: #b6e2fe;
+  --color-secondary: #f9c4b3;
+  --color-tertiary: #c0f3fc;
+  --color-disabled: #f0f5f5;
+  --text-color-primary: #2c2c2c;
+  --text-color-secondary: #a4a8ab;
+  --bg-color-primary: #122042;
+  --bg-color-secondary: #f4f3f2;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  background-color: var(--bg-color-primary);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.content {
+  display: flex;
+  width: 800px;
+  height: 800px;
+  background-color: var(--bg-color-secondary);
+  border-radius: 1rem;
+
+  /* option : grid areas */
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+}
+
+.column:nth-child(1) {
+  border-right: 1px solid var(--text-color-primary);
+}
+
+.header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--text-color-primary);
+  font-weight: bold;
+}
+
+.list {
+  padding: 1rem;
+}
