@@ -1,3 +1,8 @@
+const userColorConfig = {
+  1: 'card-bg-color__primary',
+  2: 'card-bg-color__secondary',
+};
+
 const getTodos = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos');
   const todos = await response.json();
@@ -78,9 +83,13 @@ const generateTodosContent = (elementId, todos) => {
   const listEl = document.getElementById(elementId);
 
   todos.forEach((todo) => {
-    const p = document.createElement('p');
-    p.innerText = todo.title;
-    listEl.appendChild(p);
+    const card = document.createElement('div');
+    card.classList.add('card', userColorConfig[todo.userId]);
+    const cardText = document.createElement('div');
+    cardText.innerText = todo.title;
+
+    card.appendChild(cardText);
+    listEl.appendChild(card);
   });
 };
 

@@ -27,7 +27,6 @@ body {
 .content {
   display: flex;
   width: 800px;
-  height: 800px;
   background-color: var(--bg-color-secondary);
   border-radius: 1rem;
 
@@ -49,6 +48,32 @@ body {
   font-weight: bold;
 }
 
+.list-container {
+  height: 700px;
+  overflow: scroll;
+}
+
 .list {
   padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: start;
+}
+
+/* .card-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+} */
+.card-bg-color__secondary {
+  background-color: var(--color-secondary);
+}
+
+.card-bg-color__primary {
+  background-color: var(--color-primary);
 }
