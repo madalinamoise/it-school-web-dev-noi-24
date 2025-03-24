@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #f2f2f2;
+  padding: 10px;
+  color: #000;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar ul li:last-of-type {
+  color: navy;
+  flex: 1;
+  text-align: end;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  color: navy;
+}
