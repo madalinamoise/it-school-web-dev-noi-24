@@ -1,4 +1,10 @@
+import Button from '../Button/Button';
+
 const Student = ({ name, lastName, age, isStudent, address }) => {
+  const handleOnButtonClick = () => {
+    console.log('button in student');
+  };
+
   return (
     <div style={{ backgroundColor: isStudent ? '#83c5be' : '#edf6f9' }}>
       <div>
@@ -9,6 +15,7 @@ const Student = ({ name, lastName, age, isStudent, address }) => {
       <div>
         Address: {address.street}, {address.number}
       </div>
+      <Button label='Enroll' onButtonClick={handleOnButtonClick}></Button>
     </div>
   );
 };
