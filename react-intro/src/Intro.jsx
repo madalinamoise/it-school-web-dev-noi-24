@@ -8,7 +8,7 @@ const Intro = () => {
     <>
       <NavBar />
       <Header title='New app title'></Header>
-      <div className='test-class'>Dummy text</div>
+      <div className='test-class'>Dummy text 2</div>
       <StudentList />
       {/* <Header title='New app title 1'></Header>
       <Header title='New app title 2'></Header> */}
