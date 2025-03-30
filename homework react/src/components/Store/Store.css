@@ -1,0 +1,31 @@
+.store-detail {
+  min-width: 500px;
+  min-height: 200px;
+  margin-bottom: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 150px;
+  margin-top: 100px;
+}
+
+.store-name {
+  padding: 40px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.store-adress {
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-bottom: 40px;
+}
+
+.store-timming {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
