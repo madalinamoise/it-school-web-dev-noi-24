@@ -1,0 +1,22 @@
+body {
+  font-family: 'Parkinsans', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+#joke-container {
+  width: 300px;
+  margin: auto;
+  padding: 1rem;
+}
+
+#jokes-history {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  > div {
+    width: 200px;
+  }
+}
