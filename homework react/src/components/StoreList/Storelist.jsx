@@ -1,4 +1,5 @@
 import Store from "../Store/Store";
+import "../StoreList/Storelist.css"
 import amazon from '../../assets/icons8-amazon-100.png';
 import facebook from '../../assets/icons8-facebook-100.svg'
 import google from '../../assets/icons8-google-100.svg'

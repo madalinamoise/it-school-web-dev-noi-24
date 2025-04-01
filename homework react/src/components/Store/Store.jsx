@@ -13,7 +13,6 @@ const Store = ({ name, adress, logo, schedule }) => {
         <div className="store-timming">
           Bussiness hours: <strong style={{ color: "#ff4500", paddingLeft: "10px" }}>{schedule}</strong>
         </div>
-
       </div >
     </>
 
