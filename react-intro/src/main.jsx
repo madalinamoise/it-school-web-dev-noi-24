@@ -4,7 +4,7 @@ import './index.css';
 import Intro from './Intro.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Intro />
-  </StrictMode>
+  // <StrictMode>
+  <Intro />
+  // </StrictMode>
 );

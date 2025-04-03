@@ -1,9 +1,21 @@
+import { useEffect } from 'react';
+
 const Header = (props) => {
-  console.log(props);
+  // useEffect for each render
+  useEffect(() => {
+    // codul de executat
+    console.log('header mount');
+  }, [props.isCapHeader]);
+
+  useEffect(() => {
+    return () => {
+      console.log('header unmount');
+    };
+  }, []);
 
   return (
     <header>
-      <h2>{props.title}</h2>
+      <h2>{props.isCapHeader ? props.title.toUpperCase() : props.title}</h2>
     </header>
   );
 };

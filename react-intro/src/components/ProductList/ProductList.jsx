@@ -4,14 +4,15 @@ import './ProductList.css';
 export default function ProductList({ products }) {
   return (
     <div className='product-list'>
-      {products.map((product) => (
-        <Card
-          key={product.id}
-          imageUrl={product.imageUrl}
-          price={product.price}
-          title={product.name}
-        />
-      ))}
+      {products.length > 0 &&
+        products.map((product) => (
+          <Card
+            key={product.id}
+            imageUrl={product.image}
+            price={product.price}
+            title={product.name}
+          />
+        ))}
     </div>
   );
 }
