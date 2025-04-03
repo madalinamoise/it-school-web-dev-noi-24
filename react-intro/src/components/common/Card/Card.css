@@ -1,0 +1,31 @@
+.card {
+  width: 200px;
+  background: #f2f2f2;
+  border: 1px solid #d6d6d6;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.card-image {
+  background-color: white;
+  text-align: center;
+
+  img {
+    height: 200px;
+  }
+}
+.card-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.card-title {
+  flex: 1 0 100%;
+  font-size: 1rem;
+  /* font-weight: ÷; */
+}
+
+.card-price {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

@@ -1,8 +1,25 @@
-import Button from '../Button/Button';
+import { scholarships } from '../../types/consts';
+import Button from '../common/Button/Button';
 
-const Student = ({ name, lastName, age, isStudent, address }) => {
+const Student = ({ name, lastName, age, isStudent, address, scholarship }) => {
   const handleOnButtonClick = () => {
     console.log('button in student');
+  };
+
+  //if used only in JS code
+  const displayIsStudent = () => {
+    // if (isStudent) {
+    //   return <h3>DA</h3>;
+    // } else {ß
+    //   return <h3>Nu</h3>;
+    // }
+
+    if (!isStudent) {
+      return <h3>NU</h3>;
+    }
+    return <h3>DA</h3>;
+
+    // return isStudent ? <h3>'DA'</h3> : <h3>'NU'</h3>;
   };
 
   return (
@@ -11,11 +28,20 @@ const Student = ({ name, lastName, age, isStudent, address }) => {
         {name} {lastName}
       </div>
       <div>Age: {age}</div>
-      <div>Student: {isStudent ? 'DA' : 'NU'}</div>
+
+      <div>Student: {displayIsStudent()}</div>
+      {/* folosim || cand vrem un default fallback value */}
+      <div>Scholarship: {scholarships[scholarship] || 'none'}</div>
       <div>
         Address: {address.street}, {address.number}
       </div>
-      <Button label='Enroll' onButtonClick={handleOnButtonClick}></Button>
+      {!isStudent && (
+        <Button
+          label='Enroll'
+          onButtonClick={handleOnButtonClick}
+          hasCount={true}
+        ></Button>
+      )}
     </div>
   );
 };

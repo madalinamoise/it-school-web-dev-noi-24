@@ -1,6 +1,6 @@
 import './NavBar.css';
-import { getDate } from '../../utils/date';
-import reactLogo from './../../assets/react.svg';
+import { getDate } from '../../../utils/date';
+import reactLogo from './../../../assets/react.svg';
 
 const NavBar = () => {
   const style = {
