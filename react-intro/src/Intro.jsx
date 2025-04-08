@@ -2,8 +2,10 @@ import Header from './components/common/Header/Header';
 import NavBar from './components/common/NavBar/NavBar';
 import StudentList from './components/StudentList/StudentList';
 import ProductList from './components/ProductList/ProductList';
-import './Intro.css';
 import { useEffect, useState } from 'react';
+import AddProduct from './components/AddProduct/AddProduct';
+import './Intro.css';
+import image from './assets/phone.svg';
 
 const Intro = () => {
   // const products = [
@@ -77,6 +79,14 @@ const Intro = () => {
     fetchProducts();
   }, []);
 
+  const handleOnAddProduct = (product) => {
+    product.image = image;
+    product.id = Math.random();
+
+    const newProducts = [...products, product];
+    setProducts(newProducts);
+  };
+
   return (
     <>
       <NavBar />
@@ -89,6 +99,7 @@ const Intro = () => {
       <Header title='New app title 2'></Header> */}
       {/* <Card imageUrl={image} title={'Apple IPhone 14'} price={899}></Card> */}
       <ProductList products={products} />
+      <AddProduct onAdd={(product) => handleOnAddProduct(product)} />
     </>
   );
 };

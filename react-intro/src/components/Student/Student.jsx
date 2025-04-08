@@ -38,7 +38,7 @@ const Student = ({ name, lastName, age, isStudent, address, scholarship }) => {
       {!isStudent && (
         <Button
           label='Enroll'
-          onButtonClick={handleOnButtonClick}
+          onClick={handleOnButtonClick}
           hasCount={true}
         ></Button>
       )}
