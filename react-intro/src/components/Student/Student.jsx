@@ -1,5 +1,5 @@
 import { scholarships } from '../../types/consts';
-import Button from '../common/Button/Button';
+import Button from '../../common/Button/Button';
 
 const Student = ({ name, lastName, age, isStudent, address, scholarship }) => {
   const handleOnButtonClick = () => {

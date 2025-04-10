@@ -1,5 +1,5 @@
-import Header from './components/common/Header/Header';
-import NavBar from './components/common/NavBar/NavBar';
+import Header from './common/Header/Header';
+import NavBar from './common/NavBar/NavBar';
 import StudentList from './components/StudentList/StudentList';
 import ProductList from './components/ProductList/ProductList';
 import { useEffect, useState } from 'react';

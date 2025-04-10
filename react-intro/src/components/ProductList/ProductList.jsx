@@ -1,4 +1,4 @@
-import Card from '../common/Card/Card';
+import Card from './../../common/Card/Card';
 import './ProductList.css';
 
 //HW: add delete button on card and erase product from list
