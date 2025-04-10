@@ -3,9 +3,9 @@ import { TfiShoppingCart } from 'react-icons/tfi';
 
 import './Card.css';
 
-export default function Card({ imageUrl, title, price }) {
+export default function Card({ imageUrl, title, price, onClick }) {
   return (
-    <div className='card'>
+    <div className='card' onClick={onClick}>
       <div className='card-image'>
         <img src={imageUrl} alt='card-image'></img>
       </div>
@@ -13,7 +13,7 @@ export default function Card({ imageUrl, title, price }) {
         <div className='card-title'>{title}</div>
         <p className='card-price'>${price}</p>
 
-        <Button icon={<TfiShoppingCart />}> </Button>
+        <Button icon={<TfiShoppingCart />} />
       </div>
     </div>
   );

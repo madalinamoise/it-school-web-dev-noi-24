@@ -1,13 +1,10 @@
-import Header from './common/Header/Header';
-import NavBar from './common/NavBar/NavBar';
-import StudentList from './components/StudentList/StudentList';
-import ProductList from './components/ProductList/ProductList';
-import { useEffect, useState } from 'react';
-import AddProduct from './components/AddProduct/AddProduct';
-import './Intro.css';
-import image from './assets/phone.svg';
+import { useState, useEffect } from 'react';
+import ProductList from '../../components/ProductList/ProductList';
+import AddProduct from '../../components/AddProduct/AddProduct';
+import image from './../../assets/phone.svg';
+import Header from '../../common/Header/Header';
 
-const Intro = () => {
+export default function Products() {
   // const products = [
   //   {
   //     id: '1',
@@ -46,34 +43,15 @@ const Intro = () => {
   //     price: 899,
   //   },
   // ];
-  const [showHeader, setShowHeader] = useState(true);
-  const [isCapHeader, setCapHeader] = useState(false);
+
   const [products, setProducts] = useState([]);
-
-  console.log('render');
-  useEffect(() => {
-    setTimeout(() => {
-      setShowHeader((prev) => !prev);
-    }, [5000]);
-  });
-
-  useEffect(() => {
-    console.log('empty array dep');
-
-    const timeout = setTimeout(() => {
-      setCapHeader((prev) => !prev);
-    }, [1700]);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const resp = await fetch('https://fakestoreapi.com/products');
       const products = await resp.json();
       setProducts(products);
+      console.log(products);
     };
 
     fetchProducts();
@@ -89,19 +67,10 @@ const Intro = () => {
 
   return (
     <>
-      <NavBar />
-      {showHeader && (
-        <Header title='New app title' isCapHeader={isCapHeader}></Header>
-      )}
-      <div className='test-class'>Dummy text 2</div>
-      <StudentList />
-      {/* <Header title='New app title 1'></Header>
-      <Header title='New app title 2'></Header> */}
-      {/* <Card imageUrl={image} title={'Apple IPhone 14'} price={899}></Card> */}
+      <Header title='Products'></Header>
+
       <ProductList products={products} />
       <AddProduct onAdd={(product) => handleOnAddProduct(product)} />
     </>
   );
-};
-
-export default Intro;
+}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import './NavBar.css';
 import { getDate } from './../../utils/date';
 import reactLogo from './../../assets/react.svg';
@@ -7,20 +9,26 @@ const NavBar = () => {
     color: 'red',
   };
 
+  if (window.location.pathname === '/home') {
+    console.log('home');
+  }
+
   return (
-    <nav className='navbar' style={style}>
+    <nav className='custom-navbar' style={style}>
       <ul>
         <li>
-          <img src={reactLogo}></img>
+          <a href='https://react.dev/' target='_blank'>
+            <img src={reactLogo}></img>
+          </a>
         </li>
         <li>
-          <a href=''>Home</a>
+          <Link to='/users'>Users</Link>
         </li>
         <li>
-          <a href=''>About</a>
+          <Link to='/students'>Students</Link>
         </li>
         <li>
-          <a href=''>Contact</a>
+          <Link to='/products'>Products</Link>
         </li>
         <li>{getDate()}</li>
       </ul>

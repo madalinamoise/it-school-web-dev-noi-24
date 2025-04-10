@@ -9,6 +9,11 @@
   font-weight: 400;
 }
 
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
 body {
   margin: 0;
   display: flex;

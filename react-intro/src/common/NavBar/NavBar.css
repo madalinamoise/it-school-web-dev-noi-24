@@ -1,25 +1,27 @@
-.navbar {
+.custom-navbar {
   background-color: #f2f2f2;
   padding: 1rem;
   color: #000;
+  width: 100%;
 }
-.navbar ul {
+.custom-navbar ul {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 0;
 }
-.navbar ul li:first-of-type {
+.custom-navbar ul li:first-of-type {
   display: flex;
 }
 
-.navbar ul li:last-of-type {
+.custom-navbar ul li:last-of-type {
   color: navy;
   flex: 1;
   text-align: end;
 }
 
-.navbar ul li a {
+.custom-navbar ul li a {
   text-decoration: none;
   cursor: pointer;
   color: navy;
