@@ -2,51 +2,43 @@ import Header from './components/common/Header/Header';
 import NavBar from './components/common/NavBar/NavBar';
 import StudentList from './components/StudentList/StudentList';
 import ProductList from './components/ProductList/ProductList';
+import AddProduct from './components/AddProduct/AddProduct';
 import './Intro.css';
 import { useEffect, useState } from 'react';
+import image from './assets/phone.svg'
+
 
 const Intro = () => {
-  // const products = [
-  //   {
-  //     id: '1',
-  //     imageUrl: image,
-  //     name: 'Apple IPhone 14',
-  //     price: 899,
-  //   },
-  //   {
-  //     id: '222',
-  //     imageUrl: image,
-  //     name: 'Apple IPhone 14',
-  //     price: 899,
-  //   },
-  //   {
-  //     id: '43243',
-  //     imageUrl: image,
-  //     name: 'Apple IPhone 14',
-  //     price: 899,
-  //   },
-  //   {
-  //     id: '7536',
-  //     imageUrl: image,
-  //     name: 'Apple IPhone 14',
-  //     price: 899,
-  //   },
-  //   {
-  //     id: '123',
-  //     imageUrl: image,
-  //     name: 'Apple IPhone 14',
-  //     price: 899,
-  //   },
-  //   {
-  //     id: 'xcvcxdf',
-  //     imageUrl: image,
-  //     name: 'Apple IPhone 14',
-  //     price: 899,
-  //   },
-  // ];
+  const studentAddress = {
+    street: 'Street',
+    number: 25,
+  };
+
+  const list = [
+    {
+      id: '11',
+      name: 'Alexandru',
+      lastName: 'Popescu',
+      age: 18,
+      scholarship: 'athletic',
+      address: studentAddress,
+      isStudent: true,
+    },
+    {
+      id: '12',
+      name: 'Maria',
+      lastName: 'Stelian',
+      age: 23,
+      scholarship: '',
+      address: studentAddress,
+      isStudent: false,
+    },
+  ];
+
   const [showHeader, setShowHeader] = useState(true);
   const [isCapHeader, setCapHeader] = useState(false);
   const [products, setProducts] = useState([]);
+
 
   console.log('render');
   useEffect(() => {
@@ -77,6 +69,20 @@ const Intro = () => {
     fetchProducts();
   }, []);
 
+  const handleOnAddProduct = (product) => {
+    product.image = image;
+    product.id = Math.random();
+
+    const newProducts = [...products, product]
+    setProducts(newProducts)
+  }
+
+
+  const handleDeleteProduct = (id) => {
+    setProducts(prevProducts => prevProducts.filter(product => product.id !== id));
+  };
+
+
   return (
     <>
       <NavBar />
@@ -84,13 +90,15 @@ const Intro = () => {
         <Header title='New app title' isCapHeader={isCapHeader}></Header>
       )}
       <div className='test-class'>Dummy text 2</div>
-      <StudentList />
+
+      <StudentList studentList={list} />
       {/* <Header title='New app title 1'></Header>
       <Header title='New app title 2'></Header> */}
       {/* <Card imageUrl={image} title={'Apple IPhone 14'} price={899}></Card> */}
-      <ProductList products={products} />
+      <AddProduct onAdd={(product) => handleOnAddProduct(product)}></AddProduct>
+      <ProductList products={products} onDelete={handleDeleteProduct} />
     </>
   );
-};
+}
 
 export default Intro;
