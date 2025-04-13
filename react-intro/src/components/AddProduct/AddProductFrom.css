@@ -1,0 +1,28 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+label[for="Name"] {
+  position: absolute;
+  top: 10px;
+  font-size: 16px;
+
+}
+
+/* Target label for 'Price' input */
+label[for="Price"] {
+  position: absolute;
+  top: 90px;
+  font-size: 16px;
+
+}
+
+.submit-form {
+  display: flex;
+  justify-content: end;
+}

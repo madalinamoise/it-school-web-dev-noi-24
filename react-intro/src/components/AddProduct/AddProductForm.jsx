@@ -1,5 +1,7 @@
 import { useState } from "react"
 import Button from 'react-bootstrap/Button';
+import './AddProductFrom.css'
+
 export default function AddProductForm({ onSubmit }) {
 
   const [name, setName] = useState('');
@@ -15,14 +17,18 @@ export default function AddProductForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="Name">name</label>
-      <input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <label htmlFor="Price">Price</label>
-      <input name="price" placeholder="price" value={price}
-        type="number" onChange={(e) => setPrice(e.target.value)} />
-      <Button variant="primary" type="submit">
-        Add
-      </Button>
+      <div className="input-form">
+        <label htmlFor="Name">Name</label>
+        <input name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+        <label htmlFor="Price">Price</label>
+        <input name="price" placeholder="price" value={price}
+          type="number" onChange={(e) => setPrice(e.target.value)} />
+      </div>
+      <div className="submit-form">
+        <Button variant="dark" type="submit">
+          Add
+        </Button>
+      </div>
     </form>
   )
 }

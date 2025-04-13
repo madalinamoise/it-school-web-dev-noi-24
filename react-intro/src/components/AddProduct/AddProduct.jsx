@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import AddProductForm from './AddProductForm';
+import './AddProduct.css'
 
 export default function AddProduct({ onAdd }) {
   const [show, setShow] = useState(false);
@@ -13,10 +14,12 @@ export default function AddProduct({ onAdd }) {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="success" size="lg" onClick={handleShow}>Add Product</Button>
+      <div className="add-product">
+        <Button variant="dark" size="lg" onClick={handleShow}>Add Product</Button>
+      </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title className='add-product-title'>Add Product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <AddProductForm onSubmit={(value) => handleOnSubmit(value)} />

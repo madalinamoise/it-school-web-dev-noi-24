@@ -39,8 +39,6 @@ const Intro = () => {
   const [isCapHeader, setCapHeader] = useState(false);
   const [products, setProducts] = useState([]);
 
-
-  console.log('render');
   useEffect(() => {
     setTimeout(() => {
       setShowHeader((prev) => !prev);
@@ -71,12 +69,11 @@ const Intro = () => {
 
   const handleOnAddProduct = (product) => {
     product.image = image;
-    product.id = Math.random();
+    product.id = Math.ceil(Math.random() * 100)
 
     const newProducts = [...products, product]
     setProducts(newProducts)
   }
-
 
   const handleDeleteProduct = (id) => {
     setProducts(prevProducts => prevProducts.filter(product => product.id !== id));
