@@ -1,7 +1,7 @@
 import './Button.css';
 import { useState } from 'react';
 
-const Button = ({ label, onClick, hasCount, icon }) => {
+const Button = ({ label, onClick, hasCount, icon, iconPosition }) => {
   const [count, setCount] = useState(0);
 
   // .addEventListener('click',()=>{})
@@ -21,9 +21,11 @@ const Button = ({ label, onClick, hasCount, icon }) => {
       onMouseLeave={handleOnMouseLeave}
       onMouseEnter={handleOnMouseEnter}
     >
+      {iconPosition === 'left' && <span className="icon" style={{ paddingRight: '5px' }}>{icon}</span>}
       {label}
       {hasCount && ' (' + count + ')'}
-      {icon}
+      {!iconPosition && icon}
+      {iconPosition === 'right' && <span className="icon" style={{ paddingLeft: '5px' }}>{icon}</span>}
     </button>
   );
 };

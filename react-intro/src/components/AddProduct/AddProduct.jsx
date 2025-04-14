@@ -18,10 +18,9 @@ const AddProduct = ({ onAdd }) => {
 
   return (
     <>
-      <Button variant='success' onClick={handleShow}>
+      <Button variant='dark' onClick={handleShow}>
         Add product
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add product</Modal.Title>

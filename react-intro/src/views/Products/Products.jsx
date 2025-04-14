@@ -59,18 +59,21 @@ export default function Products() {
 
   const handleOnAddProduct = (product) => {
     product.image = image;
-    product.id = Math.random();
+    product.id = Math.ceil(Math.random() * 100);
 
     const newProducts = [...products, product];
     setProducts(newProducts);
   };
 
+  const handleDeleteProduct = (id) => {
+    setProducts(prevProducts => prevProducts.filter(product => product.id !== id));
+  };
+
   return (
     <>
       <Header title='Products'></Header>
-
-      <ProductList products={products} />
       <AddProduct onAdd={(product) => handleOnAddProduct(product)} />
+      <ProductList products={products} onDelete={handleDeleteProduct} />
     </>
   );
 }

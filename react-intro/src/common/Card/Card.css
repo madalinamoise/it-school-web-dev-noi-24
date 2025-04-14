@@ -4,8 +4,8 @@
   border: 1px solid #d6d6d6;
   border-radius: 1rem;
   overflow: hidden;
-  cursor: pointer;
 }
+
 .card-image {
   background-color: white;
   text-align: center;
@@ -14,19 +14,39 @@
     height: 200px;
   }
 }
+
 .card-body {
   display: flex;
   flex-wrap: wrap;
   padding: 0.5rem;
 }
+
 .card-title {
   flex: 1 0 100%;
   font-size: 1rem;
-  /* font-weight: ÷; */
+  height: 70px;
+  overflow: hidden;
 }
 
 .card-price {
   flex: 1;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.card-details,
+.card-actions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card-unique {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-actions {
+  column-gap: 30px;
 }
