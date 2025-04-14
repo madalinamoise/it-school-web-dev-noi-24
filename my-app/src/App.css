@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c9c9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+  }
+  
+  .app-container {
+    background-color: #e2e2e2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  /* Stilizarea butoanelor */
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    background-color: #4b5b77;
+    border: 2px solid #c9c9c9;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #788caf;
+  }
+  
+  .button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .button.active {
+    background-color: #4b7bec;
+    color: white;
+    border-color: #4b7bec;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  /* Stilizarea listei de date */
+  .data-container {
+    margin-top: 20px;
+  }
+  
+  .data-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .data-item {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .data-item strong {
+    color: #4b7bec;
+  }

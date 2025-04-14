@@ -1,19 +1,33 @@
 import Button from './../Button/Button';
 import { TfiShoppingCart } from 'react-icons/tfi';
 
+
 import './Card.css';
 
-export default function Card({ imageUrl, title, price, onClick }) {
+export default function Card({ imageUrl, title, price, onDelete }) {
   return (
-    <div className='card' onClick={onClick}>
+    <div className='card'>
       <div className='card-image'>
         <img src={imageUrl} alt='card-image'></img>
       </div>
       <div className='card-body'>
         <div className='card-title'>{title}</div>
-        <p className='card-price'>${price}</p>
+        <div className="card-details">
+          <p className='card-price'>${price}</p>
+        </div>
+        <div className="card-actions">
+          <Button
+            icon={<TfiShoppingCart />}
+            label={'Add'}
+            iconPosition={'right'}
+          >
+          </Button>
+          <Button
+            onClick={onDelete}
+            label={'Delete'}
+          ></Button>
+        </div>
 
-        <Button icon={<TfiShoppingCart />} />
       </div>
     </div>
   );
