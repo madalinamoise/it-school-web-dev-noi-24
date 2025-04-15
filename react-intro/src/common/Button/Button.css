@@ -15,3 +15,7 @@ span {
   justify-content: center;
   align-items: center;
 }
+
+.icon-right {
+  padding-left: 5px;
+}

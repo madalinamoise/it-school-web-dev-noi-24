@@ -19,7 +19,7 @@ export default function Card({ imageUrl, title, price, uniqueId, onClick, onDele
           <Button
             icon={<TfiShoppingCart />}
             label={'Add'}
-            iconPosition={'right'}
+          // iconPosition={'right'}
           >
           </Button>
           <Button

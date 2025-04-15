@@ -24,8 +24,8 @@ const Button = ({ label, onClick, hasCount, icon, iconPosition }) => {
       {iconPosition === 'left' && <span className="icon" style={{ paddingRight: '5px' }}>{icon}</span>}
       {label}
       {hasCount && ' (' + count + ')'}
-      {!iconPosition && icon}
-      {iconPosition === 'right' && <span className="icon" style={{ paddingLeft: '5px' }}>{icon}</span>}
+      {!iconPosition && <span className={`icon ${label && 'icon-right'}`}>{icon}</span>}
+      {iconPosition === 'right' && <span className="icon icon-right">{icon}</span>}
     </button>
   );
 };
