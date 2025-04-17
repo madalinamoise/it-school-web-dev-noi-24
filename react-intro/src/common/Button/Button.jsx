@@ -1,29 +1,30 @@
-import './Button.css';
-import { useState } from 'react';
+import "./Button.css";
+import { useState } from "react";
+import { clsx } from "clsx";
 
 const Button = ({ label, onClick, hasCount, icon }) => {
   const [count, setCount] = useState(0);
 
   // .addEventListener('click',()=>{})
-  const handleOnClick = () => {
+  const handleOnClick = (e) => {
     setCount((prevValue) => prevValue + 1);
-    onClick();
+    onClick(e);
   };
 
-  const handleOnMouseLeave = () => console.log('on mouse leave');
+  const handleOnMouseLeave = () => console.log("on mouse leave");
 
-  const handleOnMouseEnter = () => console.log('on mouse enter');
+  const handleOnMouseEnter = () => console.log("on mouse enter");
 
   return (
     <button
-      className='button'
-      onClick={handleOnClick}
+      className="button"
+      onClick={(e) => handleOnClick(e)}
       onMouseLeave={handleOnMouseLeave}
       onMouseEnter={handleOnMouseEnter}
     >
       {label}
-      {hasCount && ' (' + count + ')'}
-      {icon}
+      {hasCount && " (" + count + ")"}
+      <span className={clsx("icon", label && "icon-p-left")}>{icon}</span>
     </button>
   );
 };

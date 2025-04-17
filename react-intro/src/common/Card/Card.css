@@ -15,18 +15,22 @@
   }
 }
 .card-body {
-  display: flex;
-  flex-wrap: wrap;
   padding: 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr;
 }
-.card-title {
+.card-body-title {
   flex: 1 0 100%;
   font-size: 1rem;
   /* font-weight: ÷; */
+}
+.card-body-content {
+  display: flex;
 }
 
 .card-price {
   flex: 1;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 0;
 }

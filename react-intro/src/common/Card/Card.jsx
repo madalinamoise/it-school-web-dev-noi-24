@@ -1,19 +1,23 @@
-import Button from './../Button/Button';
-import { TfiShoppingCart } from 'react-icons/tfi';
+import Button from "./../Button/Button";
+import { TfiShoppingCart } from "react-icons/tfi";
 
-import './Card.css';
+import "./Card.css";
 
-export default function Card({ imageUrl, title, price, onClick }) {
+export default function Card({ imageUrl, title, price, onClick, actions }) {
   return (
-    <div className='card' onClick={onClick}>
-      <div className='card-image'>
-        <img src={imageUrl} alt='card-image'></img>
+    <div className="card" onClick={onClick}>
+      <div className="card-image">
+        <img src={imageUrl} alt="card-image"></img>
       </div>
-      <div className='card-body'>
-        <div className='card-title'>{title}</div>
-        <p className='card-price'>${price}</p>
+      <div className="card-body">
+        <div id="title" className="card-body-title title">
+          {title}
+        </div>
+        <div className="card-body-content">
+          <p className="card-price">${price}</p>
 
-        <Button icon={<TfiShoppingCart />} />
+          {actions}
+        </div>
       </div>
     </div>
   );

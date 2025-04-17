@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import ProductList from '../../components/ProductList/ProductList';
-import AddProduct from '../../components/AddProduct/AddProduct';
-import image from './../../assets/phone.svg';
-import Header from '../../common/Header/Header';
+import { useState, useEffect } from "react";
+import ProductList from "../../components/ProductList/ProductList";
+import AddProduct from "../../components/AddProduct/AddProduct";
+import image from "./../../assets/phone.svg";
+import Header from "../../common/Header/Header";
 
 export default function Products() {
   // const products = [
@@ -45,10 +45,11 @@ export default function Products() {
   // ];
 
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const resp = await fetch('https://fakestoreapi.com/products');
+      const resp = await fetch("https://fakestoreapi.com/products");
       const products = await resp.json();
       setProducts(products);
       console.log(products);
@@ -65,11 +66,18 @@ export default function Products() {
     setProducts(newProducts);
   };
 
+  const handleAddProductToCart = (productTitle) => {
+    setCart((prev) => [...prev, productTitle]);
+  };
+
   return (
     <>
-      <Header title='Products'></Header>
-
-      <ProductList products={products} />
+      <Header title="Products"></Header>
+      <div> Shopping Cart Items : {cart.length}</div>
+      <ProductList
+        products={products}
+        addProductToCart={handleAddProductToCart}
+      />
       <AddProduct onAdd={(product) => handleOnAddProduct(product)} />
     </>
   );
