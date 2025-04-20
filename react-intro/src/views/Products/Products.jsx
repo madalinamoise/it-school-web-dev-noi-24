@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
-import ProductList from "../../components/ProductList/ProductList";
-import AddProduct from "../../components/AddProduct/AddProduct";
-import image from "./../../assets/phone.svg";
+import { useEffect, useState } from "react";
 import Header from "../../common/Header/Header";
+import AddProduct from "../../components/AddProduct/AddProduct";
+import ProductList from "../../components/ProductList/ProductList";
+import { ADD_TO_CART } from "../../store/cart/actions";
+import { useCart } from "../../store/cart/CartContext";
+import image from "./../../assets/phone.svg";
 
 export default function Products() {
   // const products = [
@@ -45,14 +47,13 @@ export default function Products() {
   // ];
 
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const { dispatch } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
       const resp = await fetch("https://fakestoreapi.com/products");
       const products = await resp.json();
       setProducts(products);
-      console.log(products);
     };
 
     fetchProducts();
@@ -66,19 +67,21 @@ export default function Products() {
     setProducts(newProducts);
   };
 
-  const handleAddProductToCart = (productTitle) => {
-    setCart((prev) => [...prev, productTitle]);
+  const handleAddProductToCart = (id) => {
+    dispatch({
+      type: ADD_TO_CART,
+      payload: id,
+    });
   };
 
   return (
     <>
       <Header title="Products"></Header>
-      <div> Shopping Cart Items : {cart.length}</div>
       <ProductList
         products={products}
         addProductToCart={handleAddProductToCart}
       />
-      <AddProduct onAdd={(product) => handleOnAddProduct(product)} />
+      <AddProduct onAdd={(id) => handleOnAddProduct(id)} />
     </>
   );
 }

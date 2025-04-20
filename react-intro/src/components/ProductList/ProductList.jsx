@@ -8,9 +8,9 @@ import { TfiShoppingCart } from "react-icons/tfi";
 export default function ProductList({ products, addProductToCart }) {
   let navigate = useNavigate();
 
-  const handleButtonClick = (e, productTitle) => {
+  const handleButtonClick = (e, id) => {
     e.stopPropagation();
-    addProductToCart(productTitle);
+    addProductToCart(id);
   };
   return (
     <div className="product-list">
@@ -25,7 +25,7 @@ export default function ProductList({ products, addProductToCart }) {
             actions={
               <Button
                 icon={<TfiShoppingCart />}
-                onClick={(e) => handleButtonClick(e, product.title)}
+                onClick={(e) => handleButtonClick(e, product.id)}
               />
             }
           />

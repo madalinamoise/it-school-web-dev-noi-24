@@ -1,9 +1,13 @@
-import Button from "./../Button/Button";
-import { TfiShoppingCart } from "react-icons/tfi";
-
 import "./Card.css";
 
-export default function Card({ imageUrl, title, price, onClick, actions }) {
+export default function Card({
+  imageUrl,
+  title,
+  price,
+  quantity,
+  onClick,
+  actions,
+}) {
   return (
     <div className="card" onClick={onClick}>
       <div className="card-image">
@@ -13,6 +17,11 @@ export default function Card({ imageUrl, title, price, onClick, actions }) {
         <div id="title" className="card-body-title title">
           {title}
         </div>
+        {quantity && (
+          <div id="title" className="card-body-title title">
+            Quantity: {quantity}
+          </div>
+        )}
         <div className="card-body-content">
           <p className="card-price">${price}</p>
 
