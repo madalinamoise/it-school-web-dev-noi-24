@@ -1,4 +1,4 @@
-import { ADD_TO_CART, CLEAR_CART } from "./actions";
+import { ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART } from "./actions";
 
 export default function cartReducer(state, action) {
   switch (action.type) {
@@ -23,6 +23,10 @@ export default function cartReducer(state, action) {
         );
       }
       return [...state, { id: action.payload, quantity: 1 }];
+    }
+
+    case REMOVE_FROM_CART: {
+      return state.filter((product) => product.id !== action.payload);
     }
 
     case CLEAR_CART: {

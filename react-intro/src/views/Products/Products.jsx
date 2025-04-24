@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Header from "../../common/Header/Header";
 import AddProduct from "../../components/AddProduct/AddProduct";
 import ProductList from "../../components/ProductList/ProductList";
-import { ADD_TO_CART } from "../../store/cart/actions";
 import { useCart } from "../../store/cart/CartContext";
 import image from "./../../assets/phone.svg";
 
@@ -47,7 +46,7 @@ export default function Products() {
   // ];
 
   const [products, setProducts] = useState([]);
-  const { dispatch } = useCart();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -67,12 +66,7 @@ export default function Products() {
     setProducts(newProducts);
   };
 
-  const handleAddProductToCart = (id) => {
-    dispatch({
-      type: ADD_TO_CART,
-      payload: id,
-    });
-  };
+  const handleAddProductToCart = (id) => addToCart(id);
 
   return (
     <>
